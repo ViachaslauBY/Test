@@ -1,0 +1,350 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.knowledge-base {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 15px;
+  max-width: 1920px;
+  background: #424242;
+}
+
+/* Checkbox */
+.knowledge-base__checkbox {
+  margin-right: 15px;
+  margin-bottom: 15px;
+  padding: 21px 20px 29px;
+  height: fit-content;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.checkbox__title {
+  margin-bottom: 20px;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.checkbox__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox__content:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.checkbox__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.checkbox__label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #333333;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox__input + .checkbox__label::before {
+  content: "";
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: 9px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999999;
+  border-radius: 3px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.checkbox__input:checked + .checkbox__label::before {
+  border: 1px solid #ccb26e;
+  border-radius: 3px;
+  outline: none;
+  background-image: url("../img/checked.svg");
+}
+
+.checkbox__input:focus + .checkbox__label::before {
+  border: 1px solid #2c12be;
+  border-radius: 3px;
+  outline: none;
+}
+
+/* Select */
+.knowledge-base__select {
+  margin-right: 15px;
+  margin-bottom: 15px;
+  width: 176px;
+}
+
+.choices {
+  width: 100%;
+}
+
+.choices.focus-visible.is-focused {
+  border: 1px solid #2c12be;
+  border-radius: 10px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.choices__inner {
+  padding: 9px 15px 11px;
+  min-height: auto;
+  font-family: Open Sans;
+  font-weight: 400;
+  line-height: 19px;
+  color: #333333;
+  background: #ffffff;
+  border: none;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.choices[data-type*="select-one"] .choices__inner {
+  padding-bottom: 11px;
+}
+
+.choices__placeholder {
+  opacity: 1;
+}
+
+.is-open .choices__inner {
+  border: 1px solid #ccb26e;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: #ffffff;
+}
+
+.choices__list--dropdown {
+  background-color: #ffffff;
+  border: 1px solid #ccb26e;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.is-open .choices__list--dropdown {
+  border: 1px solid #ccb26e;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: 0;
+}
+
+.choices__list--dropdown .choices__item {
+  position: relative;
+  padding-left: 15px;
+  font-family: Open Sans;
+  font-size: 14px;
+}
+
+.choices__list--dropdown .choices__item:last-child {
+  padding-bottom: 20px;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted::after {
+  display: none;
+}
+
+.choices__list--dropdown .choices__item--selectable {
+  padding-right: 0px;
+}
+
+#choices--selectCustom-item-choice-5 {
+  display: none;
+}
+
+.choices[data-type*="select-one"]:after {
+  content: "";
+  position: absolute;
+  right: 11.5px;
+  top: 50%;
+  margin-top: -6.5px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #666666;
+  border-bottom: none;
+  border-left: none;
+  transform: rotate(135deg);
+  pointer-events: none;
+}
+
+.choices[data-type*="select-one"].is-open:after {
+  content: "";
+  position: absolute;
+  right: 11.5px;
+  top: 50%;
+  margin-top: -1.5px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #ccb26e;
+  border-top: none;
+  border-right: none;
+  transform: rotate(135deg);
+  pointer-events: none;
+}
+
+/* Map */
+
+.knowledge-base__map {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+
+/* Scroll */
+.knowledge-base__scroll {
+  margin-right: 15px;
+  margin-bottom: 15px;
+  padding: 20px;
+  width: 360px;
+  height: 310px;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 175%;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+.simplebar-content-wrapper {
+  overflow: auto;
+}
+
+.simplebar-scrollbar::before {
+  background-color: #ccb26e;
+  opacity: 1;
+}
+
+.simplebar-scrollbar.simplebar-visible::before {
+  opacity: 1;
+}
+
+.simplebar-track.simplebar-vertical {
+  top: 5px;
+  right: 4px;
+  width: 10px;
+}
+
+/* Form */
+.knowledge-base__form {
+  margin-right: 15px;
+  margin-bottom: 15px;
+  height: fit-content;
+  background-color: #000000;
+  /* opacity: 0.4; */
+}
+
+.form {
+  padding: 21px 20px 39px;
+  border-radius: 10px;
+}
+
+.form__group {
+  margin-bottom: 14px;
+}
+
+.form__label {
+  margin-left: 20px;
+  margin-bottom: 5px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  color: rgba(255, 92, 0, 1);
+}
+
+.form__input {
+  display: block;
+  padding: 24px 20px;
+  width: 380px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #999999;
+  background: #ffffff;
+  border: 1px solid #ff5c00;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+input[placeholder] {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19px;
+  color: #999999;
+}
+
+.form__button {
+  display: inline-block;
+  margin-top: 17px;
+  padding: 18px 53px;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  color: #ffffff;
+  background-color: #ff5c00;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Tooltip */
+.knowledge-base__tooltip {
+  margin-bottom: 15px;
+  padding: 20px;
+  max-width: 325px;
+  height: fit-content;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 170%;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+.button-reset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-family: inherit;
+  background-color: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.tooltip {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/tooltip.svg");
+}
+
+.tooltip:hover,
+.tooltip:focus {
+  background-image: url("../img/tooltip2.svg");
+}
